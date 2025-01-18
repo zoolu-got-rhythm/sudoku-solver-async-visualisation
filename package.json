@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "sudoku-solver-async": "^1.0.2"
+    "sudoku-solver-async": "file:sudoku-solver-async-1.0.5.tgz"
   },
   "devDependencies": {
     "webpack": "^5.97.1",
