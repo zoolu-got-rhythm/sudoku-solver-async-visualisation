@@ -19,19 +19,29 @@
       #npm-link {
         margin-bottom: 20px;
       }
+
+      #app-container {
+        margin-top: -220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
     </style>
   </head>
   <body>
-    <h2>Sudoku Solver</h2>
-    <script src="dist/bundle.js"></script>
-    <span id="npm-link">
-      written with npm package
-      <a
-        href="https://www.npmjs.com/package/sudoku-solver-async"
-        target="_blank"
-      >
-        sudoku-solver-async
-      </a>
-    </span>
+    <div id="app-container">
+      <h2>Sudoku Solver</h2>
+      <script src="dist/bundle.js"></script>
+      <span id="npm-link">
+        written with npm package
+        <a
+          href="https://www.npmjs.com/package/sudoku-solver-async"
+          target="_blank"
+        >
+          sudoku-solver-async
+        </a>
+      </span>
+    </div>
   </body>
 </html>

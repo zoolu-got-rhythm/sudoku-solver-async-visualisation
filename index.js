@@ -76,6 +76,12 @@ let solving = true;
 
             // Append the cell to the board container
             boardContainer.appendChild(cell);
+            if (x === 8 && (y === 8) & (j === 8) && i === 8) {
+              solving = false;
+              window.setTimeout(() => {
+                cell.style.backgroundColor = "white";
+              }, 1000 / 8);
+            }
           }
         }
 
@@ -83,10 +89,11 @@ let solving = true;
         document.body.appendChild(boardContainer);
       }
     },
-    onPuzzleSolutionFound: () => { // conveniance callback
-      console.log("found");
-      solving = false;
-    },
+    // onPuzzleSolutionFound: () => {
+    //   // conveniance callback
+    //   console.log("found");
+    //   solving = false;
+    // },
     delayBetweenEachStepInCallStackInMillisecs: 1000 / 8,
   });
   console.log("solved", solvedSudoku);
