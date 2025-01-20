@@ -27,12 +27,21 @@
         justify-content: center;
         align-items: center;
       }
+
+      #sudoku-solver-and-callstack {
+        display: flex;
+        flex-direction: row;
+        /* background: green; */
+      }
+
+      #sodoku-container {
+        margin-right: 5px;
+      }
     </style>
   </head>
   <body>
     <div id="app-container">
       <h2>Sudoku Solver</h2>
-      <script src="dist/bundle.js"></script>
       <span id="npm-link">
         written with npm package
         <a
@@ -42,6 +51,16 @@
           sudoku-solver-async
         </a>
       </span>
+      <div id="sudoku-solver-and-callstack">
+        <div id="sodoku-container">
+          puzzle state <em><span id="solve-state">solving...</span></em>
+        </div>
+        <div id="callstack-container">
+          call stack <em><span id="callstack-state"></span> </em>
+        </div>
+      </div>
+
+      <script src="dist/bundle.js"></script>
     </div>
   </body>
 </html>
