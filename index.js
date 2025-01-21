@@ -56,7 +56,12 @@ function renderSudokuSolveStep(x, y, arr2d) {
         cell.style.alignItems = "center";
         cell.style.fontSize = "20px";
         cell.style.fontWeight = "bold";
-        cell.style.color = "#555";
+        if (puzzleInput2dArr[i][j] > 0) {
+          cell.style.color = "#555";
+        } else {
+          cell.style.color = "#888";
+        }
+
         cell.style.backgroundColor = "white";
         cell.style.border = "1px solid gray";
 
