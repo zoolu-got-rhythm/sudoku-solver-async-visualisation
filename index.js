@@ -140,7 +140,7 @@ function renderCallStackStep(x, y, arr2d) {
     stackContainer.style.backgroundColor = "#f9f9f9";
     stackContainer.style.fontFamily = "Arial, sans-serif";
     stackContainer.style.overflowY = "auto";
-    stackContainer.style.height = "450px";
+    stackContainer.style.height = "400px";
     const callstackContainer = document.getElementById("callstack-container");
 
     callstackContainer.appendChild(stackContainer);
