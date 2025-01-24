@@ -15,7 +15,7 @@ const puzzleInput2dArr = [
   [4, -1, 9, -1, -1, 1, 3, -1, 5],
 ];
 
-let delayBetweenEachStepInMs = 1000 / 25;
+let delayBetweenEachStepInMs = 1000 / 30;
 
 let solving = true;
 
