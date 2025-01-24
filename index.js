@@ -15,7 +15,7 @@ const puzzleInput2dArr = [
   [4, -1, 9, -1, -1, 1, 3, -1, 5],
 ];
 
-let delayBetweenEachStepInMs = 1000 / 30;
+let delayBetweenEachStepInMs = 1000 / 10;
 
 let solving = true;
 
@@ -102,16 +102,32 @@ function renderSudokuSolveStep(x, y, arr2d) {
   }
 }
 
+let nOfFunctionCalls = 0;
 function renderCallStackStep(x, y, arr2d) {
   // Create or select the call stack container
   let stackContainer = document.getElementById("call-stack");
 
+  // pop 1st function call off call stack
+
   if (stackContainer && y * 9 + (x + 1) < stackContainer.children.length) {
-    console.log("remove");
+    console.log("remove", y * 9 + (x + 1), stackContainer.children.length - 1);
+
     stackContainer.removeChild(
       stackContainer.children[stackContainer.children.length - 1]
     );
+
+    if (!solving && y * 9 + x === 0 && !solving) {
+      window.setTimeout(() => {
+        stackContainer.removeChild(stackContainer.children[0]);
+        callstackStateEle.innerHTML = `total function calls ${nOfFunctionCalls}`;
+      }, delayBetweenEachStepInMs);
+    }
+
     return;
+  } else {
+    if (solving) {
+      callstackStateEle.innerHTML = `total function calls ${++nOfFunctionCalls}`;
+    }
   }
 
   if (!stackContainer) {
@@ -119,12 +135,12 @@ function renderCallStackStep(x, y, arr2d) {
     stackContainer.style.overflowY = "scroll";
     stackContainer.id = "call-stack";
     stackContainer.style.border = "2px solid black";
-    stackContainer.style.width = "300px";
+    stackContainer.style.width = "220px";
     stackContainer.style.padding = "10px";
     stackContainer.style.backgroundColor = "#f9f9f9";
     stackContainer.style.fontFamily = "Arial, sans-serif";
     stackContainer.style.overflowY = "auto";
-    stackContainer.style.height = "400px";
+    stackContainer.style.height = "450px";
     const callstackContainer = document.getElementById("callstack-container");
 
     callstackContainer.appendChild(stackContainer);
@@ -166,5 +182,5 @@ function renderCallStackStep(x, y, arr2d) {
     // },
     delayBetweenEachStepInCallStackInMillisecs: delayBetweenEachStepInMs,
   });
-  console.log("solved!", solvedSudoku);
+  // console.log("solved!", solvedSudoku);
 })();

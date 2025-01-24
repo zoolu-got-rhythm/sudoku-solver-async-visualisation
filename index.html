@@ -9,7 +9,6 @@
         font-family: Arial, sans-serif;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         height: 100vh;
         margin: 0;
@@ -41,9 +40,10 @@
   </head>
   <body>
     <div id="app-container">
-      <h2>Sudoku Solver Recursive</h2>
+      <h2>Sudoku Solver</h2>
+      <span> call stack visualisation of bruteforce recursive algorithm </span>
       <span id="npm-link">
-        written with npm package
+        written using npm package
         <a
           href="https://www.npmjs.com/package/sudoku-solver-async"
           target="_blank"
@@ -51,7 +51,7 @@
           sudoku-solver-async
         </a>
       </span>
-      <div id="controls">
+      <!-- <div id="controls">
         <button id="toggle-solve">Start</button>
         <label for="speed-slider">Speed:</label>
         <input
@@ -63,7 +63,7 @@
           step="100"
         />
         <span id="speed-value">500ms per function call</span>
-      </div>
+      </div> -->
       <div id="sudoku-solver-and-callstack">
         <div id="sodoku-container">
           puzzle state <em><span id="solve-state">solving...</span></em>
